@@ -1,40 +1,32 @@
-<html manifest="cache.manifest"><!--  -->
+<html manifest="cache.manifest">
 <head>
-<title>6.72 Exploit And HEN - By Leeful</title>
+<title>leeful Mira 破解</title>
 <script>
-function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
-function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="缓存进度: " + Percent + "%";}
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="缓存完毕！";},1000);setTimeout(function(){window.msgs.innerHTML="请断网后再重新打开浏览器";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script>
-<script src="exp_webkit.js"></script>
+<script src="exp_common.js"></script>
+<script src="exp_jailbreak.js"></script>
+<style>
+    button {
+        width: 40%;
+        height: 10%;
+        font-size: 24px;
+        background-color: black;
+        color: #ededed;
+		border: 0;
+    }
+</style>
 </head>
-<body style="background-color:#3462a8;color:white;">
-<h1 id=msgs style='font-size:25px;text-align:center;'>6.72 Exploit Menu</h1>
+<body style="background-color:#555555;color:white;">
+<h1 id=msgs style='font-size:25px;text-align:center;'>leeful Mira 破解</h1>
 <hr><br>
-<h1 style='font-size:18px;text-align:center;'>LOAD JAILBREAK</h1>
 <div style="text-align:center">
-Option 1: <button onclick="load_exploit(); return false"> Load Exploit </button> then  
-<button onclick="load_HEN(); return false"> Load HEN </button>
+<button onclick="load_exploit_HEN(); return false"> 一键HEN破解 </button>
 <br><br>
-Option 2: <button onclick="load_exploit_HEN(); return false"> Load Exploit And HEN Together </button>
-<br><br><br>
-<h1 style='font-size:18px;text-align:center;'>PAYLOADS</h1>
-<button onclick="load_binloader(); return false"> Bin Loader </button>
-<button onclick="load_ftp(); return false"> FTP </button>
-<button onclick="load_dumper(); return false"> Dumper </button>
-<button onclick="load_linux(); return false"> Linux </button>
-<button onclick="load_app2usb(); return false"> App2USB </button>
-<button onclick="load_kerneldump(); return false"> Kernel Dumper </button>
-<button onclick="load_webrte(); return false"> WebRTE </button>
-<button onclick="load_ps4debug(); return false"> PS4debug </button>
+<button onclick="load_exploit_mira(); return false"> 一键MIRA破解 </button>
 <br><br>
-<button onclick="load_todex(); return false"> ToDEX </button>
-<button onclick="load_historyblock(); return false"> History Blocker </button>
-<button onclick="load_updatesdisable(); return false"> Disable Updates </button>
-<button onclick="load_updatesenable(); return false"> Enable Updates </button>
-<button onclick="load_dbBackup(); return false"> DB Backup </button>
-<button onclick="load_dbRestore(); return false"> DB Restore </button>
-<br><br><br>
-<button onclick="load_fanthresh(); return false"> Set Fan Threshold </button><select id="tempC"></select>&#176;C<br>The PS4's default temp is 79&#176;C
+<button onclick="load_exploit_miraUnoff(); return false"> 一键MIRA破解（非官方） </button>
 <script>
 for(var i=40; i<=79; i++){
     var select = document.getElementById("tempC");
@@ -50,28 +42,52 @@ tempC.value=60;
 <script>
 function load_exploit(){
 msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit ...</h1>";
-function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
-function loadScript(){getScript("exp_kernel.js",function(){setTimeout(jailbreak,500);});}loadScript();
-}
-
-function load_HEN(){
-msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading HEN ...</h1>";
-LoadedMSG="HEN Loaded ✔ - Press Circle To Exit";
-function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
-function loadScript(){getScript("exp_loaderHEN.js",function(){setTimeout(plLoader,500);});}loadScript();
+setTimeout(jailbreak,500);
 }
 
 function load_exploit_HEN(){
-msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exploit And HEN ...</h1>";
-LoadedMSG="Exploit And HEN Loaded ✔ - Press Circle To Exit";
-function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
-function loadScript(){getScript("exp_kernelHEN.js",function(){setTimeout(jailbreak,500);});}loadScript();
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>正在HEN破解 ...</h1>";
+LoadedMSG="Exploit + HEN Loaded ✔";ExploitMira="HEN";MiraSRC="pl_HEN.js";
+setTimeout(jailbreak,500);
+}
+
+function load_exploit_mira(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>正在MIRA破解 ...</h1>";
+LoadedMSG="Exploit + Mira Loaded ✔";ExploitMira="yes";MiraSRC="pl_mira.js";
+setTimeout(jailbreak,500);
+}
+
+function load_exploit_miraUnoff(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>正在MIRA破解 (Unofficial) ...</h1>";
+LoadedMSG="Exploit + Mira Loaded ✔";ExploitMira="yes";MiraSRC="pl_mira_unofficial.js";
+setTimeout(jailbreak,500);
 }
 
 function load_binloader(){
 msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Bin Loader ...</h1>";
 LoadedMSG="Send Payload To Port 9021";
 var script = document.createElement('script');script.src = "exp_BinLoader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_HEN(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading HEN ...</h1>";
+LoadedMSG="HEN Loaded ✔";
+var script = document.createElement('script');script.src = "pl_HEN.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_mira(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Mira ...</h1>";
+LoadedMSG="Mira Loaded ✔";
+var script = document.createElement('script');script.src = "pl_mira.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function load_mira_unofficial(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Mira ...</h1>";
+LoadedMSG="Mira Loaded ✔";
+var script = document.createElement('script');script.src = "pl_mira_unofficial.js";document.getElementsByTagName('head')[0].appendChild(script);
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
 }
 
 function load_ftp(){
