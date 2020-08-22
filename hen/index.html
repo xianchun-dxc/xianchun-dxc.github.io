@@ -1,6 +1,6 @@
 <html manifest="cache.manifest"><!--  -->
 <head>
-<title>leeful HEN 破解</title>
+<title>672 HEN 破解</title>
 <script>
 function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
 function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
@@ -8,7 +8,7 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cac
 <script src="exp_webkit.js"></script>
 </head>
 <body onload="load_exploit_HEN()" style="background-color:#000;color:white;">
-<h1 id=msgs style='font-size:36px;text-align:center; margin-top: 300px;'>leeful HEN 破解</h1>
+<h1 id=msgs style='font-size:36px;text-align:center; margin-top: 300px;'>672 HEN 破解</h1>
 <hr><br>
 <script>
 function load_exploit(){
@@ -27,7 +27,7 @@ function loadScript(){getScript("exp_loaderHEN.js",function(){setTimeout(plLoade
 function load_exploit_HEN(){
     setTimeout(function(){
         msgs.innerHTML="<h1 style='font-size:36px;text-align:center;'>正在破解，请耐心等待 ...</h1>";
-        LoadedMSG="破解成功 ✔ - 按下O键退出";
+        LoadedMSG="破解成功 ✔";
         function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
         function loadScript(){getScript("exp_kernelHEN.js",function(){setTimeout(jailbreak,500);});}loadScript();
     }, 2000);
